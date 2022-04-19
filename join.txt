@@ -1,0 +1,108 @@
+select * from a full join b on a.aid=b.aid;
+ create table AA ( id int, name varchar(20), city varchar (15));
+ insert into aa values (1, 'ganesh', 'mumbai');
+ insert into aa values (1, 'deepak','pune');
+ insert into aa values (2, 'ramjan', 'latur');
+ insert into aa values (Null,'latif','osmanabad');
+ select * from aa;
+
+  create table BB ( id int, name varchar(20), dep varchar (15));
+  insert into bb values (1, 'santosh', 'etc');
+ insert into bb values (1, 'deepak','comp');
+ insert into bb values (1, 'sandeep', 'adm');
+insert into bb values (Null,'latif','comp');
+  insert into bb values (Null,'attar','comp');
+   insert into bb values (2,'manoj','comp');
+
+
+ select * from bb;
+ select * from aa;
+
+ select * from aa join bb on aa.id=bb.id;
+  select * from aa left join bb on aa.id=bb.id;
+  select * from aa right join bb on aa.id=bb.id;
+  select aa.name,bb.dep from aa left join bb on aa.id=bb.id;
+    select aa.name,bb.dep from aa right join bb on aa.id=bb.id;
+	    select aa.name,bb.name from aa right join bb on aa.id=bb.id;
+			    select aa.name,bb.name from aa right join bb on aa.id=bb.id;
+	    select aa.name,bb.name from aa left join bb on aa.id=bb.id;
+		 select * from aa full join bb on aa.id=bb.id;
+
+
+
+
+		 create table a1 ( id int, name varchar(20), city varchar (15));
+
+ insert into a1 values (1, 'ganesh', 'mumbai');
+ insert into a1 values (1, 'deepak','pune');
+ insert into a1 values (2, 'ramjan', 'latur');
+ insert into a1 values (Null,'latif','osmanabad');
+ select * from a1;
+
+ create table B1 ( id int, dep varchar (15), salary int );
+ insert into b1 values (1,'comp',35000);
+  insert into b1 values (1,'ent',45000);
+   insert into b1 values (1,'civil',50000);
+    insert into b1 values (null,'comp',70000);
+	 insert into b1 values (null,'admin',85000);
+	  insert into b1 values (2,'comp',55000);
+	  select * from b1;
+	   
+	   select * from a1 join b1 on a1.id=b1.id;
+	   select * from a1 left join b1 on a1.id=b1.id;
+	   select a1.name,a1.city,b1.salary from a1 right join b1 on a1.id=b1.id;
+	   select a1.name,a1.city,b1.salary from a1 full join b1 on a1.id=b1.id;
+select * from  a1, b1 where a1.id=b1.id and salary <=55000;
+select * from  a1 cross join b1;
+
+
+
+
+	   
+	   create table EMP_new (id int, name varchar (10),Company varchar (10),Work varchar (10));
+insert into EMP_new values (1,'Amit','Info','pune')
+insert into EMP_new values (2,'Puja','Tcs','Mumbai')
+insert into EMP_new values (3,'Poonam','Tech','Pune')
+insert into EMP_new values (4,'Abhi','Logic','Nagpur')
+insert into EMP_new values (5,'Kirti','Lim','Nagar')
+
+select * from EMP_new
+create table Job (salary int,base varchar (10),id int)
+insert into job values (10000,'Pune',1)
+insert into job values (20000,'Mumbai',3)
+insert into job values (30000,'Nagpur',4)
+insert into job values (40000,'Pune',5)
+insert into job values (35000,'Nagar',2)
+
+select * from Job;
+select * from EMP_new
+
+select * from EMP_new,job where EMP_new.id=job.id and EMP_new.work=job.base;
+
+
+create table SELF_TEST_EMP(EID int, ENAME varchar(20),ManagerID varchar(20))
+
+insert into SELF_TEST_EMP values(1,'Shivam',2)
+insert into SELF_TEST_EMP values(2,'krishna',4)
+insert into SELF_TEST_EMP values(3,'meera',NULL)
+insert into SELF_TEST_EMP values(4,'radha',2)
+insert into SELF_TEST_EMP values(5,'bali',1)
+
+select * from SELF_TEST_EMP
+
+select * from SELF_TEST_EMP as  t1, SELF_TEST_EMP as t2 where t1.eid=t2.managerid;
+
+
+create table student( id int, name varchar(20),city varchar(10));
+
+insert into student values (101, 'amit', 'latur')
+insert into student values (102, 'suraj', 'satara')
+insert into student values (103, 'ganesh', 'pune')
+insert into student values (104, 'sushil', 'pune')
+insert into student values (105, 'ramjan', 'osmanabad')
+insert into student values (106, 'latif', 'osmanabad')
+insert into student values (107, 'dilip', 'satara')
+insert into student values (108, 'deepak', 'osmanabad')
+ select * from student 
+
+select * from student as S1,student as s2 where s1.name=s2.city and s1.name<>s2.name;

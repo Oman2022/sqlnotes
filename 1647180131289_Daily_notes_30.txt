@@ -1,0 +1,181 @@
+Class_1
+
+--Q.What is data?
+--Collection of meaniful information.
+--OR
+--Collection record information.
+
+--Q. What is database(DBMS)?
+--it is collection of data in file format.
+--ex:Excel,word file,text file, notepad , notepad++ etc.
+
+--it stores less amount of data 
+--no relationship between two files or tables 
+
+
+--Q.What is RDBMS(Relatinal data base management system)?
+--it is collection of table related information.
+--it stores huge amount of data and to extract the data we have a simple language i.e. SQL
+--There is relation between two or more tables.
+
+--Q.what is table ?
+--it is collection of rows and columns.
+
+--SQL is not a case sensitive language
+--The meaning 'A' is always same 'a'
+--for ex: 'AMAR' it has same meaning of 'amar'
+
+--Q.how to execute SQL statements?
+--1.By using Execute tab form top 
+--2.By pressing F5 key from key board
+
+--Data types 
+--Type of data/value of an object can hold is known as data type.
+--A].Numeric data type 
+
+--1.BIT
+--it stores value 0 or 1
+
+--2.TINYINT 
+--It will store the value ranging from 0 to 255
+
+--3.SMALLINT
+--it will store value ranging -32768 to 32767
+
+--4.Decimal
+--an exact fixed point number 
+
+--5. INT
+--it stores an integer value i.e. ranging from -2147483648 to 2147483647
+
+--B].Approximate numeric data type 
+--1.Float 
+--it will store floating point number range is -1.8E to 308 to 1.8E to 308
+--for Ex: 8.2345, 0.9876 etc
+--2.Real
+--it will also store an floating point numbers -3.40E to 38 to 3.40E to 38
+
+--C].String or charecter data type
+--1.char - 0-9,a-z,A-Z and Special symbol it will store data as 1 bit
+--Static memory allocation and it is having size of 8000 chars
+--for ex: char(20) -- AMAR - 4 char reaming 16 blocks of memory waisted because it has been fixed
+
+
+--2.varchar -  - 0-9,a-z,A-Z and Special symbol
+--It is dynamic memory allocation and it will store data as 1 bit
+--for ex: varchar(20) -- AMAR - 4 char reaming 16 blocks of memory it will releasse has been fixed
+declare @val1 varchar(8000)='AMARPatil';
+print @val1
+print datalength(@val1)
+print len(@val1)
+
+
+--3.nchar
+--It is static memory allocation and it can store 4000 charecters (1 char it will occupy 2bytes)
+declare @value nchar(4000) = 'AMAR'
+print @value
+print datalength(@value)
+print len(@value)
+
+--4.nvarchar
+--It is dynamic memory allocation and it can store 4000 charecters (1 char it will occupy 2bytes).
+
+declare @value1 nvarchar(4000) = 'AMAR'
+print @value1
+print datalength(@value1)
+print len(@value1)
+
+--D].data and Time data type 
+--1.date 
+--It will allow you to insert the date in mulptiple formats 
+--For Ex: YYYY/MM/DD,DD/MM/YYYY,YYYY/DD/MM etc 
+select GETDATE()
+
+--2.time 
+--it will allow you to insert the time in below format
+--HH:MM:SS:MS
+
+
+--3.Datetime
+--It will allow you to insert date and time together.
+--YYYY/MM/DD HH:MM AM/PM
+
+declare @datetime datetime  = getdate()
+print @datetime
+
+--SQL statements
+--There are four types of SQL statements 
+--1.DDL(Data Defination lamguage) -- Table level operation.
+--2.DML(Data Manipulation Language) --Data stored inside the table
+--3.DCL(Data Control Language)
+--4.TCL(Transction Control Language)
+
+-----------------------------------------------------------------------------------------
+
+Class_2
+
+--1.DDL(Data Defination lamguage) 
+--These statements are basically used to perform structure related operation w.r.to table.
+--Create,Drop,Truncate,Alter,Rename 
+
+--Create
+--This Is DDL SQL statement and used to create database and Table.
+
+
+
+--Q.How to create Table?
+Create table FirstTable(
+FID int,
+FirstName varchar(20),
+LastName varchar(20),
+City varchar(20),
+Age int);
+
+--In SQL if you want to terminate SQL statement then use ; at the end of statement.
+
+--2.DML(Data Manipulation Language)
+--These statements are used to operate the data stored inside into the table.
+--DML statements are used to play with table data.
+--below are the diffrent statements
+--SELECT,INSERT,UPDATE,DELETE (S_UID)
+
+--SELECT
+--Select statement is used to select the data which you have written
+--This is DML statement and used to fetch the records from table.
+
+
+--Q.How to fetch the complete data from a table?
+select * from FirstTable;
+
+--Q.how to select a particular column from table?
+select firstname,age from FirstTable
+
+--* - it will indicate we are selecting complete data from table
+
+--Q.How will you insert the data into the table?
+
+--INSERT
+--Insert Statement is used to insert the data into the table.
+--By two ways we can insert the data into the table
+--METHOD-I
+
+--We have to insert the data sequence wise how we have created the table
+
+insert into FirstTable values(1,'Praveen','Patil','Pune',30);
+
+insert into FirstTable values(1,'Praveen','Patil','Pune'); --Erorr -Column name or number of supplied values does not match table definition.
+
+select * from FirstTable
+
+--METHOD-II
+--We dont have restrictions to insert the data as per column sequence defined in table.
+--While inserting the data we have to mention column names in insert statement.
+
+insert into FirstTable (FID,FirstName) values (2,'Amit')
+
+insert into FirstTable (FirstName,FID,Age,LastName) values ('Puneet',3,24,'sharma');
+
+insert into FirstTable (Age,FID,FirstName,LastName) values (35,4,'Puskar','Verma')
+insert into FirstTable (Age,FID,FirstName,LastName) values (27,5,'Meena','Patil')
+
+select * from FirstTable

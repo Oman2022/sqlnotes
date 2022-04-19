@@ -1,0 +1,81 @@
+create table info (id int, name varchar(10), dept varchar(10), salary int, city varchar(15), mobile varchar(10), age int)
+
+select * from info;
+select name,city,age from info 
+insert into info values (001, 'Amit', 'mech', 36000, 'Pune', 9586635855, 27);
+insert into info values (002, 'Ganesh', 'comp', 60000, 'satara', 9566352565, 25);
+insert into info values (003, 'Ramjan', 'comp', 65000, '
+
+
+create table info (id int, name varchar(10), dept varchar(10), salary int, city varchar(15), mobile varchar(10), age int)
+
+select * from info;
+select name,city,age from info 
+
+insert into info values (001, 'Amit', 'mech', 36000, 'Pune', 9586635855, 27);
+insert into info values (002, 'Ganesh', 'comp', 60000, 'satara', 9566352565, 25);
+insert into info values (003, 'Ramjan', 'comp', 65000, 'kolapur', 8859563562, 28);
+insert into info values (004, 'deepak', 'etc', 30000, 'mumbai', 8956231245, 26);
+insert into info values ( 005, 'latif', 'civil', 25000, 'kolahpur', 7845123265, 29);
+insert into info values (006, 'dilip', 'mech', 35000, 'pune', 1548263568, 25);
+
+select * from info;
+ 
+ insert into info (name) values ('attar');
+ insert into info (name,salary,city) values ('nimkar', 20000, 'latur');
+ insert into info values (009, 'attar', 'mech', 25000, 'satara', 1589632548, 28);
+ select name from info
+ select id, salary, city from info
+ select * from info;
+
+ select * from info where name='nimkar';
+  select * from info where name='deepak';
+   select * from info where name!='deepak';
+    select * from info where age<30;
+
+		    select * from info where age>=28;
+				    select * from info where age<=28;
+	    select * from info where name='deepak' and age=28 and salary=30000;
+
+
+
+
+select * from info
+
+create table info (id int, name varchar(10), dept varchar(10), salary int, city varchar(15), mobile varchar(10), age int)
+
+select * from info;
+select name,city,age from info 
+
+insert into info values (001, 'Amit', 'mech', 36000, 'Pune', 9586635855, 27);
+insert into info values (002, 'Ganesh', 'comp', 60000, 'satara', 9566352565, 25);
+insert into info values (003, 'Ramjan', 'comp', 65000, 'kolapur', 8859563562, 28);
+insert into info values (004, 'deepak', 'etc', 30000, 'mumbai', 8956231245, 26);
+insert into info values ( 005, 'latif', 'civil', 25000, 'kolahpur', 7845123265, 29);
+insert into info values (006, 'dilip', 'mech', 35000, 'pune', 1548263568, 25);
+
+select * from info;
+ 
+ insert into info (name) values ('attar');
+ insert into info (name,salary,city) values ('nimkar', 20000, 'latur');
+ insert into info values (009, 'attar', 'mech', 25000, 'satara', 1589632548, 28);
+ select name from info
+ select id, salary, city from info
+ select * from info;
+
+ select * from info where name='nimkar';
+  select * from info where name='deepak';
+   select * from info where name!='deepak';
+    select * from info where age<30;
+
+		    select * from info where age>=28;
+				    select * from info where age<=28;
+	    select * from info where name='deepak' and age=28 and salary=30000;
+		select * from info where name='deepak' or  age=28;
+		select * from info where name like 'a%';
+select * from info where name like '__m%';
+select * from info where name like '%n';
+		select * from info where name like 'd%k';
+select * from info where name like '%a%';-- last char
+select * from info where name like 'ni%'; --first 2 charter 
+		select * from info where name like '[al]%';-- name starting with a and l
